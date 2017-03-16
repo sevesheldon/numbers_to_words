@@ -9,6 +9,7 @@ class Fixnum
     number_hash_two_digits = { 2 => "twenty", 3 => "thirty", 4 => "forty", 5 => "fifty",
                               6 => "sixty", 7 => "seventy", 8 => "eighty", 9 => "ninety" }
 
+
                                                                                 #reversed_hash = Hash[number_hash.to_a.reverse]
     number_word = ""
     number = self
@@ -21,7 +22,15 @@ puts(number_split)
     elsif number < 100
       number_word = number_hash_two_digits.fetch(number_split[0])
       number_word = number_word.concat(" " + number_hash.fetch(number_split[1]))
+    elsif number < 1000
+      number_word = number_hash.fetch(number_split[0]).concat(" hundred ")
+      number_word = number_word.concat(number_hash_two_digits.fetch(number_split[1]))
+      number_word = number_word.concat(" " + number_hash.fetch(number_split[2]))
+
     end
+
+
+
     number_word
   end
 end

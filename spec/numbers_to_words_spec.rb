@@ -11,7 +11,11 @@ describe('Fixnum#numbers_to_words') do
     expect(17.numbers_to_words()).to(eq("seventeen"))
   end
 
-  it('it returns the word corresponding with the number between 20 and 99') do
+  it('it returns the words corresponding with the number between 20 and 99') do
     expect(24.numbers_to_words()).to(eq("twenty four"))
+  end
+
+  it('it returns the words corresponding with the number between 100 and 999') do
+    expect(384.numbers_to_words()).to(eq("three hundred eighty four"))
   end
 end
